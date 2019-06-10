@@ -81,6 +81,7 @@ if(message.channel.type !== "text") {
         }
       }
 })
+
 bot.on("guildCreate", async guild => {
   let guildCreateChannel = bot.channels.get(`575029668055482368`);
   
