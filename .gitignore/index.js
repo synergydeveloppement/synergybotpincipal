@@ -8,7 +8,7 @@ bot.on("ready",  () => {
       status: "",
         game: {
             name: 'contrôler le serveur',
-            type: "playing",
+            type: "playing"
         }
     });
 })
