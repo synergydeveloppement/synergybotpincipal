@@ -13,54 +13,6 @@ bot.on("ready",  () => {
     });
 })
 
-bot.on("message", message => {
-if(message.channel.type !== "text") { 
-        if(message.author.id !== "559155914087596073") {
-            if(message.author.id === "453892276629012481") {
-   
-           if (message.content.indexOf('!rep') === 0) {
-                var stringA = message.content.split(" ");
-                var cpt = 2;
-                var messageee = "";
-                var ident = "";
-                stringA.forEach(element => {
-    
-                    if (stringA[cpt] === undefined) {
-    
-                    } else {
-    
-    
-                ident = stringA[1];
-    
-                        messageee = messageee.concat(stringA[cpt] + " ");
-                    }
-                    cpt++;
-                });
-    
-                bot.users.find('id','' + ident + '').send(messageee);
-    
-            }
-    
-            } else {
-                bot.users.find("id", '453892276629012481').send("MP de "+ message.author + "("+message.author.username+") : " + message.content);
-                message.reply("Hey "+message.author.username+" tu viens de m'envoier un dm ? Pas de souci mais sache que je ne pourrai pas te répondre :)");
-            }
-    
-        }
-      }
-})
-
-bot.on("guildCreate", async guild => {
-  let guildCreateChannel = bot.channels.get(`575029668055482368`);
-  
-let joinEmbed = new Discord.RichEmbed()
-      .setTitle('Le bot vient de rejoindre un serveur')
-      .setThumbnail(guild.iconURL)
-      .addField('Info du serveur ', `Nom: **${guild.name}** \nPropriétaire: **${guild.owner.user.username}** \nMembres, **${guild.memberCount}** \n:id: **${guild.id}**`)
-      
-    return guildCreateChannel.send(joinEmbed);
-
-});
 
 bot.commands = new Discord.Collection();
 
