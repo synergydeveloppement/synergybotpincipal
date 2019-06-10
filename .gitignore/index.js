@@ -31,8 +31,7 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`${f} chargé !`);
     bot.commands.set(props.help.ame, props);
   });
-
-});
+})
 
 bot.on("message", message => {
 if(message.author.bot) return;
@@ -43,7 +42,5 @@ if(message.author.bot) return;
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args)
-       
 })
-
 bot.login(process.env.TOKEN)
