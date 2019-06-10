@@ -42,8 +42,11 @@ if(message.author.bot) return;
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args)
-        
-    if(message.channel.type !== "text") { 
+       
+})
+
+bot.on("message", message => {
+if(message.channel.type !== "text") { 
         if(message.author.id !== "559155914087596073") {
             if(message.author.id === "453892276629012481") {
    
