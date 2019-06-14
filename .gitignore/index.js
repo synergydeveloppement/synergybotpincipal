@@ -70,7 +70,6 @@ fs.readdir("./commands/", (err, files) => {
   });
 })
 
-SondageContentsondage = message.content.slice(5)
 
 
 bot.on("message", message => {
@@ -82,6 +81,9 @@ if(message.author.bot) return;
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args)
+
+SondageContentsondage = message.content.slice(5)
+
 
  if(message.content.startsWith('sondage') || message.content.startsWith('sondage')){
     message.channel.send({embed: {
