@@ -84,10 +84,10 @@ if(message.author.bot) return;
 
 SondageContentyn = message.content.slice(5)
 
-if(message.content.startsWith('yn') || message.content.startsWith('on')){
+if(message.content.startsWith('sondage ')){
     message.channel.send({embed: {
     color: 0xff8c00,
-    description: `\nSondage : \n\n**${SondageContentyn}**`
+    description: :`\n**${SondageContentyn}**`
   }}).then(message => {
     message.react('✅')
     message.react('❌')
