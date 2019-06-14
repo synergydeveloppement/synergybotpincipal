@@ -82,11 +82,11 @@ if(message.author.bot) return;
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args)
 
-SondageContentsondage = message.content.slice(5)
+SondageContentSondage = message.content.slice(5)
 
- if(message.content.startsWith('sondage')){
+ if(message.content.startsWith('!sondage')){
     message.channel.send({embed: {
-    description: `\n**${SondageContentsondage}**`
+    description: `\n\n**${SondageContentSondage}**`
   }}).then(message => {
     message.react('✅')
     message.react('❌')
