@@ -79,5 +79,18 @@ if(message.author.bot) return;
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args)
+SondageContentsondage = message.content.slice(5)
+
+  if(message.content.startsWith('sondage') || message.content.startsWith('sondage')){
+    message.channel.send({embed: {
+    color: 0xff8c00,
+    title: `Sondage lancé par ${message.author.username}` ,
+    description: `Répondre par ✅ ou ❌ \n\nSondage : \n\n**${SondageContentsondage}**`
+  }}).then(message => {
+    message.react('✅')
+    message.react('❌')
+  })
+
+
 })
 bot.login(process.env.TOKEN)
