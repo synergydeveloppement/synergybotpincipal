@@ -92,5 +92,6 @@ if(message.author.bot) return;
     message.react('✅')
     message.react('❌')
 })
+}
 })
 bot.login(process.env.TOKEN)
