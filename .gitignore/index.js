@@ -70,6 +70,9 @@ fs.readdir("./commands/", (err, files) => {
   });
 })
 
+SondageContentsondage = message.content.slice(5)
+
+
 bot.on("message", message => {
 if(message.author.bot) return;
   if(message.channel.type === "dm") return;
@@ -79,9 +82,8 @@ if(message.author.bot) return;
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args)
-SondageContentsondage = message.content.slice(5)
 
-  if(message.content.startsWith('sondage') || message.content.startsWith('sondage')){
+ if(message.content.startsWith('sondage') || message.content.startsWith('sondage')){
     message.channel.send({embed: {
     color: 0xff8c00,
     title: `Sondage lancé par ${message.author.username}` ,
@@ -89,6 +91,6 @@ SondageContentsondage = message.content.slice(5)
   }}).then(message => {
     message.react('✅')
     message.react('❌')
-}
+})
 })
 bot.login(process.env.TOKEN)
