@@ -89,8 +89,6 @@ SondageContentsondage = message.content.slice(5)
   }}).then(message => {
     message.react('✅')
     message.react('❌')
-  })
-
-
+}
 })
 bot.login(process.env.TOKEN)
