@@ -84,7 +84,7 @@ if(message.author.bot) return;
 
 SondageContentsondage = message.content.slice(5)
 
- if(message.content.startsWith('!sondage') || message.content.startsWith('sondage')){
+ if(message.content.startsWith('!sondage')){
     message.channel.send({embed: {
     description: `\n**${SondageContentsondage}**`
   }}).then(message => {
