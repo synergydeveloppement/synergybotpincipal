@@ -82,15 +82,16 @@ if(message.author.bot) return;
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args)
 
-SondageContentSondage = message.content.slice(5)
+SondageContentyn = message.content.slice(5)
 
- if(message.content.startsWith('!sondage')){
+if(message.content.startsWith('yn') || message.content.startsWith('on')){
     message.channel.send({embed: {
-    description: `\n\n**${SondageContentSondage}**`
+    color: 0xff8c00,
+    description: `\nSondage : \n\n**${SondageContentyn}**`
   }}).then(message => {
     message.react('✅')
     message.react('❌')
-})
-}
+  })
+  }
 })
 bot.login(process.env.TOKEN)
