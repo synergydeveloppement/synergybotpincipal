@@ -84,10 +84,8 @@ if(message.author.bot) return;
 
 SondageContentsondage = message.content.slice(5)
 
- if(message.content.startsWith('!sondage') || message.content.startsWith('!sondage')){
+ if(message.content.startsWith('!sondage') || message.content.startsWith('sondage')){
     message.channel.send({embed: {
-    color: 0xff8c00,
-    title: `Sondage lancé par ${message.author.username}` ,
     description: `\n**${SondageContentsondage}**`
   }}).then(message => {
     message.react('✅')
