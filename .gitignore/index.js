@@ -87,7 +87,7 @@ SondageContentyn = message.content.slice(5)
 if(message.content.startsWith('sondage ')){
     message.channel.send({embed: {
     color: 0xff8c00,
-    description: :`\n**${SondageContentyn}**`
+    description  :`\n**${SondageContentyn}**`
   }}).then(message => {
     message.react('✅')
     message.react('❌')
